@@ -11,10 +11,23 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Button from '../components/Button';
 import Input from '../components/Input';
-import {GRAY1, GRAY2, GRAY3, RED, WHITE} from '../styles/Colors';
+import {GRAY1, AZURE, GRAY3, RED, WHITE, GRAY2} from '../styles/Colors';
+import LinearGradient from 'react-native-linear-gradient';
 
 const App = () => {
   const [searchTxt, setSearchTxt] = useState('');
+
+  function randHexLight() {
+    return (Math.floor(Math.random() * 56) + 200).toString(16);
+  }
+
+  function randHex() {
+    return Math.floor(Math.random() * 56).toString(16);
+  }
+
+  function randColorLight() {
+    return randHexLight() + '' + randHexLight() + '' + randHexLight();
+  }
 
   return (
     <>
@@ -62,6 +75,39 @@ const App = () => {
           </View>
         </View>
         <Text style={styles.txtSection}>Repositories</Text>
+        <LinearGradient
+          start={{x: 0, y: 0}}
+          end={{x: 1, y: 0}}
+          colors={[WHITE, '#' + randColorLight()]}
+          style={{
+            flexDirection: 'row',
+            // borderWidth: 1,
+            paddingVertical: 4,
+            // maxHeight: 50,
+            borderRadius: 5,
+            elevation: 2,
+            marginBottom: 20,
+          }}>
+          <View style={{flex: 1, margin: 15}}>
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>PROJECT 1</Text>
+            <Text
+              style={{color: GRAY2, marginVertical: 4}}
+              numberOfLines={2}
+              ellipsizeMode="tail">
+              Description awjndkawjdn ajdakwjd ajkdbawkdb adjbakdb kadnkjab
+              awdbnaw ahwbdjwa jwahbdajw djwhdbawhdb
+            </Text>
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <Text style={{fontWeight: 'bold'}}>Javascript</Text>
+              <Text style={{fontWeight: 'bold'}}>Updated on Oct 12, 2020</Text>
+            </View>
+          </View>
+        </LinearGradient>
       </View>
     </>
   );
@@ -91,7 +137,7 @@ const styles = StyleSheet.create({
   cardProfile: {
     borderRadius: 10,
     padding: 4,
-    backgroundColor: 'azure',
+    backgroundColor: AZURE,
     elevation: 10,
   },
   txtSection: {
