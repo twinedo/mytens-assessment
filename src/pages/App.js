@@ -1,33 +1,13 @@
 import React, {useState} from 'react';
-import {
-  Image,
-  Pressable,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import {GRAY1, AZURE, GRAY3, RED, WHITE, GRAY2} from '../styles/Colors';
 import LinearGradient from 'react-native-linear-gradient';
+import {randColorLight} from '../services/utils/constants';
 
 const App = () => {
   const [searchTxt, setSearchTxt] = useState('');
-
-  function randHexLight() {
-    return (Math.floor(Math.random() * 56) + 200).toString(16);
-  }
-
-  function randHex() {
-    return Math.floor(Math.random() * 56).toString(16);
-  }
-
-  function randColorLight() {
-    return randHexLight() + '' + randHexLight() + '' + randHexLight();
-  }
 
   return (
     <>
@@ -79,32 +59,21 @@ const App = () => {
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
           colors={[WHITE, '#' + randColorLight()]}
-          style={{
-            flexDirection: 'row',
-            // borderWidth: 1,
-            paddingVertical: 4,
-            // maxHeight: 50,
-            borderRadius: 5,
-            elevation: 2,
-            marginBottom: 20,
-          }}>
+          style={styles.cardRepo}>
           <View style={{flex: 1, margin: 15}}>
-            <Text style={{fontWeight: 'bold', fontSize: 18}}>PROJECT 1</Text>
+            <Text style={styles.txtTitleCardRepo}>PROJECT 1</Text>
             <Text
-              style={{color: GRAY2, marginVertical: 4}}
+              style={styles.txtDescCardRepo}
               numberOfLines={2}
               ellipsizeMode="tail">
               Description awjndkawjdn ajdakwjd ajkdbawkdb adjbakdb kadnkjab
               awdbnaw ahwbdjwa jwahbdajw djwhdbawhdb
             </Text>
-            <View
-              style={{
-                width: '100%',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <Text style={{fontWeight: 'bold'}}>Javascript</Text>
-              <Text style={{fontWeight: 'bold'}}>Updated on Oct 12, 2020</Text>
+            <View style={styles.footerCardRepo}>
+              <Text style={{fontWeight: 'bold', flex: 1}}>Javascript</Text>
+              <Text style={{fontWeight: 'bold', flex: 1}}>
+                Updated on Oct 12, 2020
+              </Text>
             </View>
           </View>
         </LinearGradient>
@@ -167,6 +136,20 @@ const styles = StyleSheet.create({
   cardFollSection: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  cardRepo: {
+    flexDirection: 'row',
+    paddingVertical: 4,
+    borderRadius: 5,
+    elevation: 2,
+    marginBottom: 20,
+  },
+  txtTitleCardRepo: {fontWeight: 'bold', fontSize: 18},
+  txtDescCardRepo: {color: GRAY2, marginVertical: 4},
+  footerCardRepo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
   },
 });
 
