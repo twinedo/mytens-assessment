@@ -2,7 +2,6 @@ import React from 'react';
 import {Dimensions, StyleSheet, View} from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import {AZURE, GRAY4} from '../styles/Colors';
-import Spacer from './Spacer';
 
 const {width} = Dimensions.get('window');
 
@@ -22,9 +21,6 @@ const CardProfileSkeleton = () => {
           <View style={styles.wrapperName}>
             <SkeletonPlaceholder backgroundColor={GRAY4}>
               <View style={styles.txtFullname} />
-            </SkeletonPlaceholder>
-            <Spacer height={10} />
-            <SkeletonPlaceholder backgroundColor={GRAY4}>
               <View style={styles.txtUsername} />
             </SkeletonPlaceholder>
           </View>
@@ -33,18 +29,12 @@ const CardProfileSkeleton = () => {
           <View style={styles.cardFollSection}>
             <SkeletonPlaceholder backgroundColor={GRAY4}>
               <View style={styles.txtTitleFoll} />
-            </SkeletonPlaceholder>
-            <Spacer height={10} />
-            <SkeletonPlaceholder backgroundColor={GRAY4}>
               <View style={styles.txtValueFoll} />
             </SkeletonPlaceholder>
           </View>
           <View style={styles.cardFollSection}>
             <SkeletonPlaceholder backgroundColor={GRAY4}>
               <View style={styles.txtTitleFoll} />
-            </SkeletonPlaceholder>
-            <Spacer height={10} />
-            <SkeletonPlaceholder backgroundColor={GRAY4}>
               <View style={styles.txtValueFoll} />
             </SkeletonPlaceholder>
           </View>
@@ -83,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  wrapperTitle: {marginBottom: 10, marginHorizontal: 6},
+  wrapperTitle: {marginBottom: 10, marginHorizontal: 6, borderRadius: 4},
   wrapperName: {flex: 1, padding: 4},
   txtSection: {
     height: 25,
@@ -91,8 +81,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
   },
-  txtFullname: {width: width / 2, height: 20},
-  txtUsername: {width: width / 2.5, height: 15},
-  txtTitleFoll: {width: 50, height: 20, alignSelf: 'center'},
+  txtFullname: {width: width / 2, height: 20, marginBottom: 10},
+  txtUsername: {width: width / 3, height: 15},
+  txtTitleFoll: {width: 50, height: 20, alignSelf: 'center', marginBottom: 10},
   txtValueFoll: {width: 30, height: 15, alignSelf: 'center'},
 });

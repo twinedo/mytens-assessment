@@ -5,7 +5,7 @@ import {WHITE} from '../styles/Colors';
 const Button = ({disabled, style, onPress, textButton}) => {
   return (
     <Pressable disabled={disabled} onPress={onPress} style={style}>
-      <Text style={styles.txtSearch}>{textButton}</Text>
+      <Text style={styles.txtButton}>{textButton}</Text>
     </Pressable>
   );
 };
@@ -13,7 +13,7 @@ const Button = ({disabled, style, onPress, textButton}) => {
 export default Button;
 
 const styles = StyleSheet.create({
-  txtSearch: {
+  txtButton: {
     color: WHITE,
     letterSpacing: 1,
     fontSize: 16,

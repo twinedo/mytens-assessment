@@ -3,12 +3,12 @@ import {StyleSheet, TextInput, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {GRAY2, WHITE} from '../styles/Colors';
 
-const Input = ({value, onChangeText, onClear}) => {
+const Input = ({value, onChangeText, onClear, placeholder}) => {
   return (
     <View style={styles.container}>
       <Ionicons name="search" size={25} color={GRAY2} />
       <TextInput
-        placeholder="Type Username Github here"
+        placeholder={placeholder}
         style={styles.input}
         value={value}
         onChangeText={onChangeText}
