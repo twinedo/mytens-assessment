@@ -5,7 +5,7 @@ export const GetProfile = async username => {
     const response = await axios.get(
       `https://api.github.com/users/${username}`,
     );
-    console.log('response profile:', response);
+    // console.log('response profile:', response);
     return Promise.resolve(response);
   } catch (error) {
     console.log('error', error);
@@ -18,7 +18,7 @@ export const GetRepo = async username => {
     const response = await axios.get(
       `https://api.github.com/users/${username}/repos`,
     );
-    console.log('response repos:', response);
+    // console.log('response repos:', response);
     return Promise.resolve(response);
   } catch (error) {
     console.log('error', error);
