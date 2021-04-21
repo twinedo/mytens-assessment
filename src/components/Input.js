@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, TextInput, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {GRAY2, WHITE} from '../styles/Colors';
+import {GRAY2, WHITE, BLACK} from '../styles/Colors';
 
 const Input = ({value, onChangeText, onClear, placeholder}) => {
   return (
@@ -9,6 +9,7 @@ const Input = ({value, onChangeText, onClear, placeholder}) => {
       <Ionicons name="search" size={25} color={GRAY2} />
       <TextInput
         placeholder={placeholder}
+        placeholderTextColor={GRAY2}
         style={styles.input}
         value={value}
         onChangeText={onChangeText}
@@ -31,5 +32,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     backgroundColor: WHITE,
   },
-  input: {flex: 1},
+  input: {flex: 1, color: BLACK},
 });
