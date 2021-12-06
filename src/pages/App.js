@@ -83,15 +83,15 @@ const App = () => {
       />
       <View style={styles.container}>
         <Text style={[styles.txtLargeBold, styles.txtTitle]}>
-          MyTens Assessment
+          Github Profile
         </Text>
-        <Text
+        {/* <Text
           style={[
             styles.txtSmallBold,
             {textAlign: 'center', marginBottom: 20},
           ]}>
           twin edo nugraha
-        </Text>
+        </Text> */}
         <Input
           placeholder="Type Username Github here"
           value={searchTxt}
